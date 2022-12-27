@@ -19,7 +19,7 @@ function App() {
 
   const filterRecipes = (recipe: Recipe) => {
     const recipeIngredientsHash = recipe.ingredients.toString();
-    return filters.some((f) => recipeIngredientsHash.includes(f));
+    return filters.every((f) => recipeIngredientsHash.includes(f));
   };
 
   const filteredRecipes = recipes.filter(filterRecipes);
